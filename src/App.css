@@ -1,0 +1,96 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  background-color: antiquewhite;
+  font-family: sans-serif;
+}
+
+.container{
+  max-width: 900px;
+  margin: 1rem auto;
+}
+
+.grid{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.form{
+  padding: 1rem;
+  background-color: white;
+  display: flex;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.form-group{
+  margin: .5rem;
+}
+
+.form-group label{
+  display: block;
+  margin-bottom: .4rem;
+}
+
+button{
+  border: none;
+  border-radius: 5px;
+  padding: 5px 19px;
+  font-size: .9rem;
+  cursor: pointer;
+  background-color: aqua;
+}
+
+select, input{
+  font-size: 1rem;
+}
+
+.card{
+  cursor: pointer;
+  background-color: white;
+  border-radius: .4rem;
+  /* width: 150px; */
+  /* height: 150px; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: rotateY(var(--rotate-y, 0));
+  transform-style: preserve-3d;
+  transition: 150ms;
+  position: relative;
+}
+
+.card.flip{
+  --rotate-y: 180deg;
+}
+
+.front,
+.back{
+  padding: 1rem;
+  position: absolute;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+}
+
+.front{
+  left: 0;
+}
+
+.back{
+  transform: rotateY(180deg);
+}
+
+.options{
+  margin-top: .5rem;
+}
+
+.option{
+  font-size: .9rem;
+  color: gray;
+}
